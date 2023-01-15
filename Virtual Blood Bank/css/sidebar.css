@@ -1,0 +1,87 @@
+*{padding: 0; margin: 0px;}
+body{
+	padding: 0; margin: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: sans-serif;
+}
+.sidebar{
+	position: absolute;
+	top: 75px;
+	left: -150px;
+	background: rgba(52,58,64,0.3);
+	width: 150px;
+	height: 60%;
+	transition: .3s;
+    z-index: 1;
+}
+.sidebar:hover{
+	left:0px;
+}
+
+.sidebar ul{
+	margin: 0;
+	padding: 10px 0;
+}
+.sidebar ul li{
+	list-style: none;
+}
+.sidebar ul li a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	border-bottom: 1px solid rgb(255,255,255);
+	padding: 10px 10px;
+	font-size: 12px;
+}
+.sidebar ul li a:hover{
+	background:#dc3545;
+	font-weight: bold;
+	padding-left: 20px;
+}
+.sideBtn{
+	position: absolute;
+	top:0;
+	right: -50px;
+	width: 50px;
+	height: 50px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: #c3c3c3;
+	border: solid #DC3545 3px;
+	outline: none;
+}
+.sideBtn span{
+	display: block;
+	width: 100%;
+	height: 5px;
+	background: white;
+	position: absolute;
+	top:20px;
+	transition: 0.3s;
+    color: greenyellow;
+}
+.sideBtn span:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	top:-10px;
+	left: 0px;
+	background-color: white;
+	transition: 0.3s;
+}
+.sideBtn span:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	top:10px;
+	left: 0px;
+	background-color: white;
+	transition: 0.3s;
+}
+
+
+
+

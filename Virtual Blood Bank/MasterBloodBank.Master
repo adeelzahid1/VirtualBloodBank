@@ -1,0 +1,246 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterBloodBank.master.cs" Inherits="Virtual_Blood_Bank.MasterBloodBank" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/custome.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    
+    <style>
+        .UserProfilePic{
+            width: 60px;
+            height: 50px;
+            border-radius: 100%;
+        }
+        .LabelUserName{
+            position: absolute;
+            top: 75px;
+            right: 40%;
+            font-weight: bold;
+            color: red;
+           
+        }
+        .socialLinks{
+            font-size: 28px;
+        }
+        .socialLinks:hover{
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <%--Navigation Bar Code--%>
+            <div class="row section">
+                <div class="col-3">
+                    <a href="index.aspx">
+                        <img class="logo img-fluid" src="img/logoheader.png" /></a>
+                </div>
+                <div class="col-7">
+                    <section>
+                        <nav class="navbar navbar-expand-lg navbar-danger fill">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.aspx">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="AllMembers.aspx">User</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="AllDonors.aspx" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DONOR <i class="fas fa-caret-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="AllDonors.aspx">Find Donor</a>
+                                            <a class="dropdown-item" href="RequestBlood.aspx">Request for Blood</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="RequireBlood.aspx">Required Blood</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="AboutUs.aspx">About Us</a>
+                                    </li>
+                                     <li class="nav-item">
+                                        <a class="nav-link" href="ContactUs.aspx">Contact Us</a>
+                                    </li>
+
+                                     <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More <i class="fas fa-caret-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                            <a class="dropdown-item" href="Faqs.aspx">Faqs</a>
+                                            <a class="dropdown-item" href="FindUs.aspx">Find Us</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">#</a>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </section>
+
+                </div>
+
+                <div class="col-2">
+                    <a href="#">
+                        <asp:Image ID="Image1" runat="server" class="UserProfilePic mt-4" /></a>
+                    <asp:Label ID="LabelUserName" runat="server" CssClass="LabelUserName" Visible="True"></asp:Label>
+
+
+
+                    <div class="btn-group mt-4">
+                        <asp:Button ID="Button1" runat="server" Text="Log Out" CssClass="btn btn-sm btn-danger" CausesValidation="False" OnClick="LogOutButton_Click" />
+                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu bg-danger mr-5">
+                            <a class="dropdown-item text-white bg-danger" href="EditProfile.aspx">Profile <span><i class="fas fa-user-cog  fa-1x"></i></span></a>
+                            <a class="dropdown-item text-white bg-danger" href="ResetPassword.aspx">Change Password <i class="fas fa-user-lock"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+       
+
+
+
+
+        <%--End Navigation Bar Code--%>
+
+      
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <%--Start Footer Panel--%>
+        <div class="footer bg-dark text-white-50">
+           <footer class="container">
+               <div class="row p-3">
+                   <div class="col-8">
+                       <ul class="nav">
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="AllDonors.aspx">Find Donors</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="AboutUs.aspx">About Us</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="Registration.aspx">Register As Donor</a>
+                           </li>
+                          <%-- <li class="nav-item">
+                               <a class="nav-link text-white-50" href="#">Request Blood</a>
+                           </li>--%>
+                            <li class="nav-item">
+                               <a class="nav-link text-white-50" href="Faqs.aspx">Blood Tips</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="FindUs.aspx">Find Us</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="ContactUs.aspx">Contact Us</a>
+                           </li>
+                            <%--<li class="nav-item">
+                               <a class="nav-link text-white-50" href="#">Privacy Policy</a>
+                           </li>--%>
+                            <%-- <li class="nav-item">
+                               <a class="nav-link text-white-50" href="AllMembers.aspx">All Registered Members</a>
+                           </li>--%>
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="RequestBlood.aspx">Request Blood</a>
+                           </li>
+                            <li class="nav-item">
+                               <a class="nav-link text-white-50" href="RequireBlood.aspx">Require Blood</a>
+                           </li>
+                          <%-- <li class="nav-item">
+                               <a class="nav-link text-white-50" href="AdminAllRequiredBlood.aspx">Admin All Required Blood</a>
+                           </li>--%>
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50" href="EditProfile.aspx">Edit Profile</a>
+                           </li>
+                           <%-- <li class="nav-item">
+                               <a class="nav-link text-white-50" href="adminbloodportal.aspx">Admin Blood Portal</a>
+                           </li>--%>
+                       </ul>
+                   </div>
+
+                   <div class="col-4">
+                       <ul class="nav">
+                           <li class="nav-item">
+                               <a class="nav-link text-white-50 socialLinks" href="www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+                           </li>
+                            <li class="nav-item">
+                               <a class="nav-link text-white-50 socialLinks" href="www.twitter.com"><i class="fab fa-twitter-square"></i></a>
+                           </li>
+                            <li class="nav-item">
+                               <a class="nav-link text-white-50 socialLinks" href="www.google.com"><i class="fab fa-google-plus-square"></i></a>
+                           </li>
+                            <li class="nav-item">
+                               <a class="nav-link text-white-50 socialLinks" href="www.youtube.com"><i class="fab fa-youtube-square"></i></a>
+                           </li>
+                       </ul>
+                       <p class="lead">All Right Reserved
+                                Copyright &copy;
+                                     <span id="year"></span>
+                            </p>
+                   </div>
+               </div>
+           </footer>
+
+
+<%--            <footer id="main-footer" class="py-5 bg-dark text-white">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-6 ml-auto">
+                           
+
+                            <p class="lead">All Right Reserved
+                                Copyright &copy;
+                                     <span id="year"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>--%>
+        </div>
+    </div>
+    </form>
+
+
+
+
+     
+    <%--<script src="js/jquery.js"></script>--%>
+
+    
+
+
+    <%--aaaa--%>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custome.js"></script>
+    <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+</script>
+
+</body>
+</html>
